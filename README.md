@@ -3,7 +3,11 @@
 
 | Home Page | Details Page |
 |----------|--------------|
-| ![Home](screenshots/Photo1.jpeg) | ![Details](screenshots/Photo3.jpeg) |
+| ![Home](
+    <img src="screenshots/Photo1.jpeg" width = 250 height = 250>
+) | ![Details](
+    <img src = "screenshots/Photo3.jpeg" width = 250 height = 250 >
+) |
 
 ## 🎥 Demo Video
 
