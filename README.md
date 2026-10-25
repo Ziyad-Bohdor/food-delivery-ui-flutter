@@ -1,13 +1,11 @@
 
+
 ## 📸 Screenshots
 
 | Home Page | Details Page |
-|----------|--------------|
-| ![Home](
-    <img src="screenshots/Photo1.jpeg" width = 250 height = 250>
-) | ![Details](
-    <img src = "screenshots/Photo3.jpeg" width = 250 height = 250 >
-) |
+|:---:|:---:|
+| <img src="screenshots/Photo1.jpeg" width="250" height = "250 /> | <img src="screenshots/Photo3.jpeg" width = "250" height = "@50  /> |
+
 
 ## 🎥 Demo Video
 
