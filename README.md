@@ -1,7 +1,4 @@
 
-
-## 📸 Screenshots
-
 ## 📸 Screenshots
 
 | Home Page | Details Page |
