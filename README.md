@@ -2,9 +2,11 @@
 
 ## 📸 Screenshots
 
+## 📸 Screenshots
+
 | Home Page | Details Page |
 |:---:|:---:|
-| <img src="screenshots/Photo1.jpeg" width="250" height = "250 /> | <img src="screenshots/Photo3.jpeg" width = "250" height = "@50  /> |
+| ![Home Page](screenshots/Photo1.jpeg) | ![Details Page](screenshots/Photo3.jpeg) ||
 
 
 ## 🎥 Demo Video
