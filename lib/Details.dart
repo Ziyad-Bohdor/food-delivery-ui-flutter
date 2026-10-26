@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class Details extends StatefulWidget
 {
   // ignore: strict_top_level_inference, prefer_typing_uninitialized_variables
-  final data ;
+  final Map data ;
   const Details({super.key, this.data});
 
   @override
@@ -44,33 +44,20 @@ class Details_State extends State<Details>
 
               child: Column(
                 children: [
-                  const SizedBox(height: 60),
+                  const SizedBox(height: 60) ,
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 25),
-                      child: Container(
-                        width: 60,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-
-                          child: Material(
-                            color: Colors.transparent,
+                      
+                        MaterialButton(
+                            height: 50,
+                            color: Colors.white,
                             shape: CircleBorder(),
-                          child: InkWell(
-                              borderRadius: BorderRadius.circular(50),
-                              onTap: () {
-                                Navigator.of(context).pop();                      
-                              },
+                            onPressed: () {
+                              Navigator.of(context).pop() ;
+                            },
                           child: Icon(Icons.arrow_back_ios_new,size: 20),
-                          ),
-                          )
-                          ),
                           ),
 
                           Padding(
@@ -131,7 +118,7 @@ class Details_State extends State<Details>
                       ),
 
                     Padding(
-                      padding: EdgeInsets.only(right: 15),
+                      padding: EdgeInsets.only(right: 10),
                       child: Row(
                         children: [
                           const Text(
@@ -237,32 +224,28 @@ class Details_State extends State<Details>
                           ),
                           child: Row(
                             children: [
-                              Container(
-                                width: 55,
-                                height: 55,
-                                decoration: BoxDecoration(
-                                  color:Color.fromRGBO(162, 12, 22, 1),
-                                  borderRadius: BorderRadius.circular(50),
-                                ),
-                                child: Material(
-                                  color: Colors.transparent ,
+
+                              MaterialButton(
+                                  minWidth: 60,
+                                  height: 60,
+                                  color: Color.fromRGBO(162, 12, 22, 1),
                                   shape: CircleBorder(),
-                                  child: InkWell(
-                                    borderRadius: BorderRadius.circular(50),
-                                    onTap: () {
-                                      setState(() {
+                                    onPressed: () {
+                                      
                                         if(counter>1)
                                         {
                                           counter--;
+                                          setState(() {
+                                            
+                                          });
                                         }
-                                      });
+                                        
                                     },
                                     child: Icon(Icons.remove,color: Colors.white),
-                                      )
                                   ),
-                                ),
+                                
 
-                                const SizedBox(width: 25),
+                                const SizedBox(width: 20),
 
                                 Text(
                                   "$counter",
@@ -272,50 +255,39 @@ class Details_State extends State<Details>
                                   ),
                                   ),
 
-                                const SizedBox(width: 25),
+                                const SizedBox(width: 20),
 
-                                Container(
-                                width: 55,
-                                height: 55,
-                                decoration: BoxDecoration(
-                                  color:Color.fromRGBO(162, 12, 22, 1),
-                                  borderRadius: BorderRadius.circular(50),
-                                ),
-                                child: Material(
-                                  color: Colors.transparent ,
+                                MaterialButton(
+                                  minWidth: 60,
+                                  height: 60,
+                                  color: Color.fromRGBO(162, 12, 22, 1),
                                   shape: CircleBorder(),
-                                  child: InkWell(
-                                    borderRadius: BorderRadius.circular(50),
-                                    onTap: () {
+                                    onPressed: () {
+                                      counter++ ;
                                       setState(() {
-                                        counter++;
+                                        
                                       });
                                     },
                                     child: Icon(Icons.add,color: Colors.white),
-                                      )
                                   ),
-                                ),
 
                             ],
                           ),
                         ),
 
-                        const SizedBox(width: 5),
+                        const SizedBox(width: 7),
                         
-                            Material(
+                          Expanded(
+                            child: MaterialButton(
+                            height: 70,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(40)
+                            ),
                             color:Color.fromRGBO(162, 12, 22, 1),
-                            borderRadius: BorderRadius.circular(50),
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(50),
-                              onTap: () {
+                              onPressed: () {
                                 
                               },
-                            child: Container(
-                              alignment: Alignment.center,
-                              width: 155,
-                              height: 75,
-                              margin: EdgeInsets.only(left: 10),
-                              child: Text(
+                            child: Text(
                                 "Add to cart",
                                 style: TextStyle(
                                   color: Colors.white,
@@ -324,16 +296,18 @@ class Details_State extends State<Details>
                                 ),
                                 ),
                             ),
-                          )
-                          )
+                            )
                       ],
                     )
 
                   ],
               ),
               )
+
+
           ],
         ),
+
 
     );
 

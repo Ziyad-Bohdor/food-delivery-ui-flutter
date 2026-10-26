@@ -78,7 +78,7 @@ class HomePage_State extends State<HomePage>
           children: [
           Padding(
             padding: EdgeInsets.all(20) ,
-          child: ListView(
+            child: ListView(
           scrollDirection: Axis.vertical,
           children: 
           [
@@ -123,12 +123,12 @@ class HomePage_State extends State<HomePage>
                 Row(
                   children: 
                   [
-                    Text("Your Favorite", style: TextStyle(
+                    Text("Your Favorite ", style: TextStyle(
                     fontSize: 25 ,
                     fontWeight: FontWeight.bold
                     )),
 
-                    Text(" Food", style: TextStyle(
+                    Text("Food", style: TextStyle(
                     color: Color.fromRGBO(162, 12, 22, 1),
                     fontSize: 25 ,
                     fontWeight: FontWeight.w500 ,
@@ -148,7 +148,7 @@ class HomePage_State extends State<HomePage>
                           fillColor: Colors.white ,
                           filled: true ,
                           prefixIcon: Icon(
-                            Icons.search,
+                            Icons.search ,
                             size: 25,
                             ),
                           hintText: "Search" ,
@@ -156,11 +156,11 @@ class HomePage_State extends State<HomePage>
                             fontSize: 20 , 
                             color: Color.fromRGBO(148, 148, 148, 1)
                         ),
-                        focusedBorder: UnderlineInputBorder(
+                        focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide.none ,
                         ),
-                        enabledBorder: UnderlineInputBorder(
+                        enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide.none ,
                         )
@@ -168,28 +168,21 @@ class HomePage_State extends State<HomePage>
                       ),
                       ),
                 
-                      Container(
-                        width: 70,
-                        height: 70,
-                        margin: EdgeInsets.only(left: 12),
-                        decoration: BoxDecoration(
-                          color: Color.fromRGBO(159, 8, 12, 1),
-                          borderRadius: BorderRadius.circular(50)
+                      Padding(
+                        padding: EdgeInsets.only(left: 10) ,
+                        child: MaterialButton(
+                        height: 65,
+                        minWidth: 65,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50) ,
                         ),
-                        child: Material(
-                          color: Colors.transparent,
-                          shape: CircleBorder(),
-
-                        child: InkWell(
-                            borderRadius: BorderRadius.circular(50),
-                            onTap: () {
-                              
-                            },
-                        
-                            child: Icon(Icons.tune, color: Colors.white),
-                          ),
+                        color: Color.fromRGBO(162, 12, 22, 1),
+                        onPressed: () {
+                          
+                        },
+                        child: Icon(Icons.tune , color: Colors.white),
+                        ),
                         )
-                      ),
                   ],
                 )
               ],
@@ -239,6 +232,7 @@ class HomePage_State extends State<HomePage>
                     fontSize: 22,
                     fontWeight: FontWeight.bold
                     )),
+
                     const Text("See All",
                     style: TextStyle(
                     color: Color.fromRGBO(162, 12, 22, 1),
@@ -343,12 +337,12 @@ class FoodCard extends StatelessWidget
     return Padding(
                             padding: EdgeInsets.only(top:10 , right:10),
                             child: InkWell(
-                            borderRadius: BorderRadius.circular(25),
-                            onTap: () {
-                              Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) => Details(data: data)));
-                            },
-                            child: Card(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(builder: (context) => Details(data: data))
+                                );
+                              },
+                              child: Card(
                               color: Colors.white,
                               elevation: 4,
                               shape: RoundedRectangleBorder(
@@ -404,10 +398,11 @@ class FoodCard extends StatelessWidget
                                         color: Colors.grey,
                                       ),
                                     ),
-                                  const SizedBox(height: 15),
+                                  const SizedBox(height: 5),
 
                                   Row(
                                     children: [
+
                                       Text(
                                       "RS. ",
                                       style: TextStyle(
@@ -415,6 +410,7 @@ class FoodCard extends StatelessWidget
                                         fontWeight: FontWeight.bold,
                                       ),
                                       ),
+
                                       Text(
                                       data["Price"],
                                       style: TextStyle(
@@ -425,36 +421,34 @@ class FoodCard extends StatelessWidget
 
                                       const Spacer(),
                                       
-                                      Material(
-                                        color: Colors.transparent,
-                                        borderRadius: BorderRadius.circular(10),
-                                        child: InkWell(
-                                          borderRadius: BorderRadius.circular(10),
-                                          onTap: () {
-                                            Navigator.of(context)
-                                            .push(MaterialPageRoute(builder: (context)=> Details(data: data)));
-                                          },
-
-                                          child: Container(
-                                            width: 35,
-                                            height: 35,
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(10),
-                                              color: Color.fromRGBO(162, 12, 22, 1),
-                                            ),
-                                            child: Icon(Icons.add,color: Colors.white),
-                                          ),
+                                      SizedBox(
+                                        width: 40,
+                                        height: 40,   
+                                        child: MaterialButton(
+                                        padding: EdgeInsets.only(left: 0),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(10) ,
                                         ),
-                                        )
+                                        color: Color.fromRGBO(162, 12, 22, 1),
+                                        onPressed: () {
+                                          Navigator.of(context).push(
+                                            MaterialPageRoute(builder: (context) => Details(data: data))
+                                          );
+                                        },
+                                        child: Icon(Icons.add , color: Colors.white, size: 25),
+                                        ),
+                                      )
+                                      
                                     ]
                                   )
 
                                   ]
 
                                 )
-                              )
+
                               )
                             )
+                            ),
     );
                             
   }
