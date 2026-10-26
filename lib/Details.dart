@@ -5,7 +5,7 @@ class Details extends StatefulWidget
 {
   // ignore: strict_top_level_inference, prefer_typing_uninitialized_variables
   final Map data ;
-  const Details({super.key, this.data});
+  const Details({super.key, required this.data});
 
   @override
   State<Details> createState() => Details_State() ;
